@@ -52,6 +52,11 @@
 	}
 </script>
 
+<svelte:head>
+	<title>{data.place.name} - {data.weather.main}</title>
+	<link rel="icon" href={data.weather.icon.small} />
+</svelte:head>
+
 <main class="container sm:mx-auto sm:mt-10 mt-4 mx-4">
 	<h1 class="sm:text-4xl text-2xl font-bold">Current Weather</h1>
 
