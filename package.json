@@ -1,7 +1,8 @@
 {
 	"name": "show-local-weather",
 	"version": "0.0.1",
-	"private": true,
+	"author": "Adibta Triantama<adibtatriantama@gmail.com>",
+	"license": "MIT",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
