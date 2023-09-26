@@ -47,7 +47,7 @@ export const load: PageServerLoad = async ({ cookies, getClientAddress, fetch })
 		temp: { unit, main: json.main.temp, feel_like: json.main.feels_like, symbol: tempSymbol },
 		place: { name: json.name, countryId: json.sys.country },
 		timestamp: json.dt,
-		formattedDateTime: formatDateTime(json.dt)
+		formattedDateTime: formatDateTime(json.dt, json.timezone)
 	};
 };
 
@@ -66,8 +66,9 @@ export const actions = {
 	}
 };
 
-function formatDateTime(unixTimestamp: number) {
+function formatDateTime(unixTimestamp: number, shiftTimeZoneInSecond: number) {
 	const date = new Date(unixTimestamp * 1000);
+	date.setSeconds(date.getSeconds() + shiftTimeZoneInSecond);
 
 	const months = [
 		'Jan',
