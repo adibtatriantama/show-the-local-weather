@@ -1,17 +1,25 @@
-# create-svelte
+# Show Current Weather
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+Fullstack app showing current weather in your location.
 
-## Creating a project
+## Todo
 
-If you're seeing this, you've probably already done this step. Congrats!
+[ ] get location using Geolocation API.
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+## Depend On
 
-# create a new project in my-app
-npm create svelte@latest my-app
+### [ip-api.com](https://ip-api.com/)
+
+Getting location from ip address.
+
+### [OpenWeatherMap](https://openweathermap.org/current)
+
+Getting current weather info. To run this app, register to the site and create an API key.
+
+Put your API in .env file
+
+```
+OPEN_WEATHER_API_KEY=<your api key>
 ```
 
 ## Developing
