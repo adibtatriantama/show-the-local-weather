@@ -10,9 +10,9 @@ export const load: PageServerLoad = async ({ cookies, getClientAddress, fetch })
 
 	// get location from cookies
 	const coordStr = cookies.get('coord');
-	if (coordStr) {
-		const coord = JSON.parse(coordStr);
+	const coord = JSON.parse(coordStr ?? '{}');
 
+	if (coord.lat !== undefined && coord.lon !== undefined && coord.source) {
 		[lat, lon, coordSource] = [coord.lat, coord.lon, coord.source];
 	}
 	// get location from ip address
@@ -61,6 +61,25 @@ export const actions = {
 		}
 
 		cookies.set('unit', unit, { expires: new Date(new Date().getTime() + 5 * 60 * 1000) });
+
+		return { success: true };
+	},
+	updateLocation: async ({ cookies, request }) => {
+		const data = await request.formData();
+		const lat = data.get('lat');
+		const lon = data.get('lon');
+
+		if (!lat || typeof lat !== 'string' || !lon || typeof lon !== 'string') {
+			return fail(400);
+		}
+
+		cookies.set(
+			'coord',
+			JSON.stringify({ source: 'geolocation', lat: parseFloat(lat), lon: parseFloat(lon) }),
+			{
+				expires: new Date(new Date().getTime() + 5 * 60 * 1000)
+			}
+		);
 
 		return { success: true };
 	}

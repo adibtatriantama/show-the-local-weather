@@ -2,10 +2,6 @@
 
 Fullstack app showing current weather in your location.
 
-## Todo
-
-[ ] get location using Geolocation API.
-
 ## Depend On
 
 ### [ip-api.com](https://ip-api.com/)
