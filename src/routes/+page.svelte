@@ -30,7 +30,6 @@
 					>{data.temp.main}<sup>&deg;</sup>{data.temp.symbol}</button
 				>
 			</form>
-			<br />
 			<span class="text-right"
 				>Feel like {data.temp.feel_like}<sup>&deg;</sup>{data.temp.symbol}</span
 			>
