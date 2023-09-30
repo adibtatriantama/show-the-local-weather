@@ -43,7 +43,7 @@ You can preview the production build with `npm run preview`.
 
 ## Reference
 
-This project is from [Free Code Camp Take Home Projects](home-projects/show-the-local-weather).
+This project is from [Free Code Camp Take Home Projects](https://www.freecodecamp.org/learn/coding-interview-prep/take-home-projects/show-the-local-weather).
 
 User stories to complete the challenge
 
